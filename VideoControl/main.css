@@ -1,0 +1,22 @@
+body {
+    background-color: #dcdcd3;
+}
+
+.listContent{
+    /* font-size: 0ex; */
+    /* color: red!important; */
+    font-size: 15pt;
+    background-color: lightblue;
+    /* width: 110px; */
+    height: 564px;
+    overflow: scroll;
+}
+
+a {
+    color: #00c;
+}
+
+a:visited {
+    /* color: red; */
+}
+

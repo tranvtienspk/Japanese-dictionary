@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>test aa</title>
+
+    <!-- <style src="main.css"></style> -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="./lib/jquery.min.js"></script> -->
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <hr>
+
+    <div class="container-fluid">
+        <!-- <h1>Hello World!</h1>
+        <p>Resize the browser window to see the effect.</p>
+        <p>The columns will automatically stack on top of each other when the screen is less than 768px wide.</p> -->
+        <div class="row">
+            <div class="col-md-8" style="background-color:lavender;" data-bind="visible: true">
+                <video id="video1" width="980">
+                    <!-- <source src="./video/CachSangTaoCuaNguoiNhat.mp4" type="video/mp4"> -->
+                    <source data-bind="attr:{src: videoSrc}" type="video/mp4">
+                    <source src="mov_bbb.ogg" type="video/ogg"> Your browser does not support HTML5 video.
+                </video>
+
+                <!-- <audio id = "audio1">
+                    <source src="./audio/Business.mp3" type="audio/mpeg">
+                    <source src="horse.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+                </audio> -->
+
+                <button class="btn btn-success" data-bind="click: play">play</button>                
+            </div>
+
+            <div class="col-md-4" style="background-color:lavenderblush;">
+
+                <select data-bind="options: availableCountries,
+                       value: selectedCountry,
+                       optionsCaption: 'Choose...'">
+                </select>
+
+                <div class="listContent" data-bind="foreach: contents">
+                    <!-- <div class=""> -->
+                        <!-- <a class="" href="#" data-bind="text: content, click: $parent.playContent.bind($root,id,true)"></a>
+                        <span>______</span> -->
+                        
+                        <a href="#" data-bind="text: '_____' + id + content, click: $parent.playContent.bind($root,id)">
+                        </a>
+                        <img data-bind="attr:{src: imagePath}, click: $parent.playContent.bind($root,id)"/>
+                        <!-- <a href="#" data-bind="text: content, event: {mouseover: $parent.show(id)}"></a> -->
+                        <br>
+                        <br>
+                        <br>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div>
+        <button data-bind="click: openFile">Open File</button>
+    </div> -->
+
+    <script src="./lib/knockout-3.4.2.js"></script>
+    
+    <script src="./define.js"></script>  
+
+    <script src="./video/CachSangTaoCuaNguoiN.js"></script>    
+    <script src="./file.js"></script>    
+    <script src="./image.js"></script>    
+    <script src="./data.js"></script>    
+
+    <script src="./lib/common.js"></script>
+    <script src="./lib/video.js"></script>
+    <script src="./lib/audio.js"></script>
+
+    <script src="./main.js"></script>
+
+</body>
+
+</html>

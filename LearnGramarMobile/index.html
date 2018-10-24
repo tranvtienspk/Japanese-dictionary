@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <a href="./JsonStringfy.html">Json Stringfy</a> -->
+
+    <!-- <select data-bind="options: optionValues, value: selectedOptionValue"></select> -->
+    
+    <p>Ja to Vi: <input type="checkbox" data-bind="checked: LearnType" /></p>
+    
+    <!-- <input id="fileSelect" type="file" multiple accept=".csv"/>
+    <button data-bind="click: setDropbox">Set Dropbox</button> -->
+
+    <br>
+    <br>
+    <br>
+    <div>
+        <span>Content</span>
+        <input class="filterBox" type="text" name="" id="" data-bind="value: contentFilter, valueUpdate: ['afterkeydown']">
+        <!-- <input class="filterBox" type="text" name="" id="" data-bind="value: contentFilter"> -->
+    </div>
+    <br>
+    <div>
+        <span>Mean</span>
+        <input class="filterBox" type="text" name="" id="" data-bind="value: meanFilter, valueUpdate: ['afterkeydown']">
+        <!-- <input class="filterBox" type="text" name="" id="" data-bind="value: meanFilter"> -->
+        <span class="red"  data-bind="text: displayList().length"></span class="red" >
+    </div>
+    
+    <!-- ko if: LearnType() == true -->
+    <div data-bind="foreach: displayList">
+        <div data-bind="text: id + ': ' + content, click: $parent.show.bind($parent, $data)"></div>
+        <div class="blue" data-bind="text: mean, visible: visible"></div>
+        <br>
+    </div>
+    <!-- /ko -->
+
+    <!-- ko if: LearnType() == false -->
+    <div data-bind="foreach: displayList">
+        <div data-bind="text: id + ': ' + mean, click: $parent.show.bind($parent, $data)"></div>
+        <!-- <div class="blue" data-bind="text: content, visible: visible, click: $parent.selectContent($element)"></div> -->
+        <div class="blue" data-bind="text: content, visible: visible, click: $parent.selectContent.bind($parent, $element),
+             attr: { id: 'sss' + id }"></div>
+        <br>
+    </div>
+    <!-- /ko -->
+
+
+
+    
+
+    <script src="./jquery-2.2.3.min.js"></script>
+    <script src="./underscore-min.js"></script>
+    <script src="./knockout-3.4.2.js"></script>
+    <!-- <script src="./FileControl.js"></script> -->
+    <script src="./data.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
